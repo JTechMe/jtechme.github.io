@@ -2,3 +2,4 @@
 <application>{jumpgostandard}
 <curverid>{4.3.6.17160}
 <oldverid>{}
+<updatezip>{https://github.com/JTechMe/JumpGo-for-Windows/releases/download/v4.3.6/update.zip}
