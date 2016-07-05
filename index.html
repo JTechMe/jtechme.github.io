@@ -51,6 +51,9 @@
     <!-- Your styles -->
     <link rel="stylesheet" href="styles/main.css">
 	
+	<!-- tabzilla -->
+	<link rel="stylesheet" type="text/css" href="css/tabzilla.css" media="screen" />
+	
 	<!-- Anchor/Overlay Ads from AdSense -->
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
@@ -73,13 +76,20 @@
      your background is light. */
   color: white;
 }
+
+#tabzilla:before {
+    background-color: #0C99D5;
+}
 </style>
 
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
   <header class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title">JTechMe</span>
+	  <div id="tabzilla">
+      <a href="">JTechMe</a>
+    </div>
+      <!--<span class="mdl-layout-title">JTechMe</span>-->
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation -->
@@ -91,10 +101,14 @@
 		<a class="mdl-navigation__link" href="https://www.facebook.com/JumpGo-259821391033492/">JumpGo on Facebook</a>
         <a class="mdl-navigation__link" href="about.html">About</a>
       </nav>
+	  
     </div>
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">JTechMe</span>
+  <div id="tabzilla">
+      <a href="">JTechMe</a>
+    </div>
+    <!--<span class="mdl-layout-title">JTechMe</span>-->
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#features">Featured Apps</a>
       <a class="mdl-navigation__link" href="https://github.com/JTechMe">Us on GitHub</a>
@@ -118,6 +132,9 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+		<div id="tabzilla">
+      <a href="">JTechMe</a>
+    </div>
           <a href="#overview" class="mdl-layout__tab is-active">Overview</a>
           <a href="#features" class="mdl-layout__tab">Apps</a>
           <a href="#features" class="mdl-layout__tab">Details</a>
