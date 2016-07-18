@@ -4,6 +4,7 @@
   <appname>jumpgostandard</appname>
   <stable>
     <curverid>4.3.7.17717</curverid>
+	<dlurl>https://github.com/JTechMe/JumpGo-for-Windows/releases/download/v4.3.6/update.zip</dlurl>
   </stable>
   <beta>
     <curverid>unavailable</curverid>
