@@ -64,8 +64,7 @@
               <img src="images/logo.png"> Social </div>
             <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
               <div> <strong>JTechMe Software</strong> </div>
-              <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect"
-
+              <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect"
                 for="menubtn">
                 <li class="mdl-menu__item" href="https://www.instagram.com/jtechme/">JTM
                   on Insta</li>
@@ -76,8 +75,7 @@
                 <!--<li class="mdl-menu__item">Search</li>-->
               </ul>
               <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                <i class="material-icons" role="presentation">more_vert</i> <span
-
+                <i class="material-icons" role="presentation">more_vert</i> <span
                   class="visuallyhidden">show menu</span> </button> </div>
           </div>
           <div class="mdl-card on-the-road-again mdl-cell mdl-cell--12-col">
@@ -90,7 +88,7 @@
             </div>
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
               <div class="minilogo"></div>
-              <div> <strong>The Newist</strong> <span>2 days ago</span> </div>
+              <div> <strong>JTechMe</strong> <span>2 days ago</span> </div>
             </div>
           </div>
           <div class="mdl-card amazing mdl-cell mdl-cell--12-col">
@@ -105,8 +103,7 @@
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
               <div class="minilogo"></div>
               <br>
-              <div> <strong>JTechMe on Github</strong> <a href="http://jtechme.github.io"
-
+              <div> <strong>JTechMe on Github</strong> <a href="http://jtechme.github.io"
                   class="text-gray" itemprop="url" title="http://jtechme.github.io">http://jtechme.github.io</a>
               </div>
             </div>
@@ -121,7 +118,8 @@
               prototype builds of our JumpGo Browser </div>
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
               <div class="minilogo"></div>
-              <div> <strong>The Newist</strong> <span>2 days ago</span> </div>
+              <br>
+              <div>JumpGo Beta&nbsp; <strong></strong><span>2 days ago</span> </div>
             </div>
           </div>
           <nav class="demo-nav mdl-cell mdl-cell--12-col">
@@ -134,10 +132,8 @@
         <footer class="mdl-mini-footer">
           <div class="mdl-mini-footer--left-section"> <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
               <span class="visuallyhidden">Twitter</span> </button> <button class="mdl-mini-footer--social-btn social-btn social-btn__blogger">
-              <span class="visuallyhidden">Facebook</span> </button> <button class="mdl-mini-footer--social-btn social-btn social-btn__gplus"
-
-              href="https://plus.google.com/u/0/103345987344317762713?pli=1"> <span
-
+              <span class="visuallyhidden">Facebook</span> </button> <button class="mdl-mini-footer--social-btn social-btn social-btn__gplus"
+              href="https://plus.google.com/u/0/103345987344317762713?pli=1"> <span
                 class="visuallyhidden">Google Plus</span> <a href="https://plus.google.com/u/0/103345987344317762713?pli=1"></a>
             </button> </div>
           <div class="mdl-mini-footer--right-section"> <button class="mdl-mini-footer--social-btn social-btn__share">
