@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This file is copyright (c) JTechMe 2016 -->
+<application>
+  <jgstandard>
+    <appname>jumpgostandard</appname>
+    <stable>
+      <curverid>4.3.7.17717</curverid>
+	  <curlink>https://github.com/JTechMe/JumpGo-for-Windows/releases/download/v4.4/JGSetup.msi</curlink>
+    </stable>
+    <beta>
+      <curverid>unavailable</curverid>
+	  <curlink>unavailable</curlink>
+    </beta>
+  </jgstandard>
+  <jgdev>
+    <appname>jumpgodev</appname>
+    <stable>
+      <curverid>4.3.7.16874</curverid>
+	  <curlink>https://github.com/JTechMe/JumpGo-for-Windows/releases/download/v4.4/JGSetupDev.msi</curlink>
+    </stable>
+    <beta>
+      <curverid>unavailable</curverid>
+	  <curlink>unavailable</curlink>
+    </beta>
+  </jgdev>
+  <jgupdater>
+    <appname>jgupdater</appname>
+	<stable>
+	  <curverid>unavailable</curverid>
+	  <curlink>unavailable</curlink>
+	</stable>
+  </jgupdater>
+</application>

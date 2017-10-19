@@ -1,0 +1,8 @@
+# www.robotstxt.org/
+
+# Allow crawling of all content
+User-agent: *
+#Disallow:
+Allow: /
+Allow: /sitemap.htm
+Sitemap: http://jtechme.github.io/sitemap.xml
