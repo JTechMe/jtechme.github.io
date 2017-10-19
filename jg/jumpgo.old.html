@@ -55,6 +55,12 @@
     <!--[if lt IE 9]>
 	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>	  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>	<![endif]-->
     <link href="css/scroll.css" rel="stylesheet">
+	
+	<link href="//fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"
+          rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../jumpgo/material.min.css">
+    <link rel="stylesheet" href="../jumpgo/styles.css">
     <script>
     div.myautoscroll {
             height: 40ex;
@@ -74,9 +80,20 @@
             padding-right: 0px;
         }
     </script>
+	<style>
+	#archive {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+	</style>
   </head>
   <body>
-    <div id="tabzilla"> <a href="../">JTechMe</a> </div>
+    <div id="tabzilla"> <a href="../index.old.html">JTechMe</a> </div>
     <!-- PRELOADER -->
     <!--<div class="spn_hol">
       <div class="spinner">        <div class="bounce1"></div>        <div class="bounce2"></div>        <div class="bounce3"></div>      </div>    </div>-->
@@ -94,7 +111,7 @@
                 data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
                 <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-              <a class="navbar-brand" href="#"> <img src="images/logo.png" alt="Logo">
+              <a class="navbar-brand" href="#"> <img src="images/android-logo-white.png" alt="Logo">
               </a> </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -102,12 +119,12 @@
                 <!-- NAV -->
                 <li><a href="#HOME">HOME</a> </li>
                 <li><a href="#ABOUT">ABOUT </a> </li>
-                <li><a href="#Mobile_Features">FEATURES</a></li>
+                <li><a href="#Mobile_Features">MOBILE FEATURES</a></li>
                 <li><a href="#Desktop_Features">DESKTOP FEATURES</a></li>
                 <!--<li><a href="#SCREENS">SCREENS</a> </li>-->
                 <li><a href="#DOWNLOAD">DOWNLOAD </a> </li>
                 <li><a href="#CONTACT">CONTACT </a> </li>
-                <div id="tabzilla"> <a href="http://jtechme.github.io/">JTechMe</a>
+                <div id="tabzilla"> <a href="../index.old.html">JTechMe</a>
                 </div>
               </ul>
             </div>
@@ -117,7 +134,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="logo text-center">
-                <!-- LOGO --> <img src="images/logo.png" alt=""> </div>
+                <!-- LOGO --> <img src="images/android-logo-white.png" alt=""> </div>
             </div>
           </div>
           <div class="row">
@@ -696,11 +713,50 @@
     <!-- END DOWNLOAD -->
     <!-- =========================
      START CONTCT FORM AREA============================== -->
-    <section class="contact page" id="CONTACT">
+	 <section class="contact page" id="CONTACT">
       <div class="section_overlay">
         <div class="container">
           <div class="col-md-10 col-md-offset-1 wow bounceIn">
             <!-- Start Contact Section Title-->
+            <div class="section_title">
+              <h2>Get in touch</h2>
+              <p>Wanna say "hi"? Check out these links to our social and project
+                pages. It's that easy!</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact_form wow bounceIn"> </div>
+        <div class="container">
+		
+          <div class="row">
+            <div class="col-md-12 wow bounceInLeft">
+              <div class="social_icons">
+                <ul>
+                  <!--<li><a href="https://www.facebook.com/JumpGo-259821391033492/"><i
+
+                        class="fa fa-facebook"></i></a> <br>-->
+                  </li>
+                  <li><a href="https://github.com/JTechMe"><i class="fa fa-github"></i></a>
+                    <br>
+                  </li>
+                  <li><a href="https://www.instagram.com/jtechme/"><i class="fa fa-instagram"></i></a>
+                    <br>
+                  </li>
+                  <li><a href="https://www.youtube.com/user/JTechMe"><i class="fa fa-youtube-play"></i></a>
+                    <br>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--<section class="contact page" id="CONTACT">
+      <div class="section_overlay">
+        <div class="container">
+          <div class="col-md-10 col-md-offset-1 wow bounceIn">
+             .1--Start Contact Section Title--.
             <div class="section_title">
               <h2>Get in touch</h2>
               <p>Wanna say "hi"? Check out these links to our social and project
@@ -718,7 +774,6 @@
 
                         class="fa fa-facebook"></i></a> <br>
                   </li>
-                  <!--<li><a href=""><i class="fa fa-twitter"></i></a>-->
                   <li><a href="https://github.com/JTechMe"><i class="fa fa-github"></i></a>
                     <br>
                   </li>
@@ -734,7 +789,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>-->
     <!-- END CONTACT -->
     <!-- =========================
      FOOTER ============================== -->
@@ -746,7 +801,9 @@
             <div class="copy_right_text">
               <!-- COPYRIGHT TEXT -->
               <p>Copyright © 2016-2017 <a href="../index.html">JTechMe</a> <br>
-                <span> Theme By </span><a href="http://designscrazed.org/">Designscrazed</a></p>
+                <span> Theme By </span><a href="http://designscrazed.org/">Designscrazed</a> <br>
+				<a href="../jumpgo/rights.oldmdl.html">Know Your Rights</a> <br>
+				<a href="../jumpgo/license.oldmdl.html">JumpGo License</a></p>
             </div>
           </div>
           <div class="col-md-6">
@@ -757,6 +814,12 @@
       </div>
     </section>
     <!-- END FOOTER -->
+	<a href="entry.html" id="archive" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+	    <i class="material-icons">unarchive</i>
+	</a>
+	<div for="archive" class="mdl-tooltip mdl-tooltip--top mdl-tooltip--large">
+    Exit the JTechMe archive site
+    </div>
     <!-- =========================
      SCRIPTS ============================== -->
     <script src="js/jquery.min.js"></script>
@@ -772,5 +835,6 @@
     <script src="js/waypoints.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/script.js"></script>
+	<script src="../../material.min.js"></script>
   </body>
 </html>

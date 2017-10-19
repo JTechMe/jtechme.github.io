@@ -5,7 +5,7 @@
   <head>
     <meta content="text/html; charset=utf-8" http-equiv="content-type">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="description" content="From JTechMe to You. Just to make things a bit easier">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>JTechMe Home</title>
     <!-- Add to homescreen for Chrome on Android -->
@@ -14,7 +14,7 @@
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <meta name="apple-mobile-web-app-title" content="JTechMe">
     <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
@@ -30,7 +30,7 @@
     <link rel="canonical" href="http://www.example.com/">    -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-orange.min.css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_blue-orange.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
     #view-source {
@@ -48,13 +48,89 @@
     <link href="css/scroll.css" rel="stylesheet">
   </head>
   <body>
-    <div id="tabzilla"> <a href="">JTechMe</a> </div>
-    <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
-      <main class="mdl-layout__content">
+    <!--<div id="tabzilla"> <a href="">JTechMe</a> </div>-->
+    <div class="demo-blog mdl-layout mdl-layout--fixed-header mdl-js-layout has-drawer is-upgraded">
+	
+	<div class="android-header mdl-layout__header mdl-layout__header--waterfall" id="navbar-header">
+        <div class="mdl-layout__header-row">
+		<div id="tabzilla"> <a href="http://jtechme.github.io/">JTechMe</a> </div>
+          <!--<span class="android-title mdl-layout-title">
+            <img class="android-logo-image" src="images/android-logo.png">
+          </span>-->
+          <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="android-header-spacer mdl-layout-spacer"></div>
+          <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search-field">
+            </div>
+          </div>
+          <!-- Navigation -->
+          <div class="android-navigation-container">
+            <nav class="android-navigation mdl-navigation">
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="jumpgo/index.html">JumpGo</a>
+                <!--<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Apps</a>-->
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://github.com/JTechMe">GitHub</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://plus.google.com/103345987344317762713">G+</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://joehorton99.blogspot.com/">Blog</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="mailto:jtechme.org@gmail.com">Contact</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.html">
+				<i class="material-icons">home</i>
+				</a>
+            </nav>
+          </div>
+          <!--<span class="android-mobile-title mdl-layout-title">
+            <img class="android-logo-image" src="images/android-logo.png">
+          </span>-->
+          <!--<button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+            <i class="material-icons">more_vert</i>
+          </button>-->
+          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+            <li class="mdl-menu__item">5.0 Lollipop</li>
+            <li class="mdl-menu__item">4.4 KitKat</li>
+            <li disabled class="mdl-menu__item">4.3 Jelly Bean</li>
+            <li class="mdl-menu__item">Android History</li>
+          </ul>
+        </div>
+    </div>
+	  
+	<div class="android-drawer mdl-layout__drawer">
+        <span class="mdl-layout-title">
+          <img class="android-logo-image" src="media/img/tabzilla-static-high-res-bgwhite.png">
+        </span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="jumpgo/index.html">JumpGo</a>
+          <!--<a class="mdl-navigation__link" href="">Apps</a>-->
+          <a class="mdl-navigation__link" href="https://github.com/JTechMe">GitHub</a>
+          <a class="mdl-navigation__link" href="https://plus.google.com/103345987344317762713">Google+</a>
+          <a class="mdl-navigation__link" href="https://joehorton99.blogspot.com/">Blog</a>
+          <a class="mdl-navigation__link" href="mailto:jtechme.org@gmail.com">Contact</a>
+          <!--<a class="mdl-navigation__link" href="">Core</a>-->
+          <a class="mdl-navigation__link" href="index.html">Home</a>
+          <div class="android-drawer-separator"></div>
+          <span class="mdl-navigation__link" href="">Apps</span>
+          <!--<a class="mdl-navigation__link" href="">5.0</a>-->
+          <a class="mdl-navigation__link" href="">JumpGo</a>
+          <div class="android-drawer-separator"></div>
+          <span class="mdl-navigation__link" href="">Resources</span>
+          <a class="mdl-navigation__link" href="https://jumpgojtm.blogspot.com/">Official blog</a>
+          <a class="mdl-navigation__link" href="https://plus.google.com/103345987344317762713">JTechMe on Google+</a>
+          <a class="mdl-navigation__link" href="https://www.facebook.com/jumpgoJTM/">JumpGo on Facebook</a>
+          <div class="android-drawer-separator"></div>
+          <span class="mdl-navigation__link" href="">For developers</span>
+          <!--<a class="mdl-navigation__link" href="">App developer resources</a>-->
+		  <a class="mdl-navigation__link" href="https://github.com/JTechMe">GitHub</a>
+          <a class="mdl-navigation__link" href="project.html#project_info">The JumpGo Project</a>
+        </nav>
+    </div>
+	  
+    <main class="mdl-layout__content">
         <div class="demo-blog__posts mdl-grid">
           <div class="mdl-card coffee-pic mdl-cell mdl-cell--8-col">
             <div class="mdl-card__media mdl-color-text--grey-50">
-              <h3><a href="jumpgo/">JumpGo<span class="_Tgc">™</span> Browser</a></h3>
+              <h3><a href="jumpgo/index.html">JumpGo<span class="_Tgc">™</span> Browser</a></h3>
             </div>
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
               <div class="minilogo"></div>
@@ -63,9 +139,9 @@
             </div>
           </div>
           <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
-            <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent">
-              <i class="material-icons mdl-color-text--white" role="presentation">add</i>
-              <span class="visuallyhidden">add</span> </button>
+            <a href="https://plus.google.com/103345987344317762713" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" style="margin-right: 20px; margin-top: -28px;">
+              <i class="material-icons mdl-color-text--white" role="presentation">group_work</i>
+              <span class="visuallyhidden">add</span> </a>
             <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
               <img src="images/logo.png"> JTechMe </div>
             <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
@@ -73,12 +149,12 @@
               <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect"
 
                 for="menubtn">
-                <li class="mdl-menu__item" href="https://www.instagram.com/jtechme/">JTM
-                  on Insta</li>
-                <li class="mdl-menu__item" href="https://plus.google.com/103345987344317762713">JTM
-                  on G+</li>
-                <li class="mdl-menu__item" href="https://www.facebook.com/jumpgoJTM/">JumpGo
-                  on FaceBook</li>
+                <a class="mdl-menu__item" href="https://www.instagram.com/jtechme/">JTM
+                  on Insta</a>
+                <a class="mdl-menu__item" href="https://plus.google.com/103345987344317762713">JTM
+                  on G+</a>
+                <a class="mdl-menu__item" href="https://www.facebook.com/jumpgoJTM/">JumpGo
+                  on FaceBook</a>
                 <!--<li class="mdl-menu__item">Search</li>-->
               </ul>
               <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -88,7 +164,7 @@
           </div>
           <div class="mdl-card on-the-road-again mdl-cell mdl-cell--12-col">
             <div class="mdl-card__media mdl-color-text--grey-50">
-              <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h3>
+              <h3><a href="https://plus.google.com/103345987344317762713">On Google+</a> </h3>
             </div>
             <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
               We've updated our logo, website and look recently! Check out why!
@@ -131,6 +207,7 @@
               <div>JumpGo Beta&nbsp; <strong></strong><span>2 days ago</span> </div>
             </div>
           </div>
+		  
           <nav class="demo-nav mdl-cell mdl-cell--12-col">
             <div class="section-spacer"></div>
             <a href="entry.html" class="demo-nav__button" title="show more">
@@ -139,19 +216,26 @@
               </button> </a> </nav>
         </div>
         <footer class="mdl-mini-footer">
-          <div class="mdl-mini-footer--left-section"> <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
-              <span class="visuallyhidden">Twitter</span> </button> <button class="mdl-mini-footer--social-btn social-btn social-btn__blogger">
-              <span class="visuallyhidden">Facebook</span> </button> <button class="mdl-mini-footer--social-btn social-btn social-btn__gplus"
-
-              href="https://plus.google.com/u/0/103345987344317762713?pli=1"> <span
-
-                class="visuallyhidden">Google Plus</span> <a href="https://plus.google.com/u/0/103345987344317762713?pli=1"></a>
-            </button> </div>
-          <div class="mdl-mini-footer--right-section"> <button class="mdl-mini-footer--social-btn social-btn__share">
-              <i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span>
-            </button> </div>
+          <div class="mdl-mini-footer--left-section">
+		    <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
+              <span class="visuallyhidden">Twitter</span>
+			</button>
+			<button class="mdl-mini-footer--social-btn social-btn social-btn__blogger">
+              <span class="visuallyhidden">Facebook</span>
+			</button>
+			<button class="mdl-mini-footer--social-btn social-btn social-btn__gplus" href="https://plus.google.com/u/0/103345987344317762713?pli=1">
+			  <span class="visuallyhidden">Google Plus</span>
+			  <a href="https://plus.google.com/u/0/103345987344317762713?pli=1"></a>
+            </button>
+			</div>
+          <div class="mdl-mini-footer--right-section">
+		  <button class="mdl-mini-footer--social-btn social-btn__share">
+              <i class="material-icons" role="presentation">share</i>
+			  <span class="visuallyhidden">share</span>
+            </button>
+			</div>
         </footer>
-      </main>
+    </main>
       <div class="mdl-layout__obfuscator"></div>
     </div>
     <!--<a href="https://github.com/JTechMe/jtechme.github.io" target="_blank" id="view-source"
