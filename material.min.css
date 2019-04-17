@@ -694,7 +694,7 @@ input.mdl-button[type="submit"]{-webkit-appearance:none}
 .mdl-button--raised.mdl-button--colored:active{background-color:rgb(51,180,227)}
 .mdl-button--raised.mdl-button--colored:focus:not(:active){background-color:rgb(51,180,227)}
 .mdl-button--raised.mdl-button--colored .mdl-ripple{background:rgb(66,66,66)}
-.mdl-button--fab{border-radius:50%;font-size:24px;height:56px;margin:auto;min-width:56px;width:56px;padding:0;overflow:hidden;background:rgba(158,158,158,.2);box-shadow:0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24);position:relative;line-height:normal}
+.mdl-button--fab{border-radius:50%;font-size:24px;height:56px;margin:auto;min-width:56px;width:56px;padding:0;overflow:hidden;background:rgba(158,158,158,.2);box-shadow:0 1px 1.5px 0 rgba(0,0,0,0),0 1px 1px 0 rgba(0,0,0,0);position:relative;line-height:normal}
 .mdl-button--fab .material-icons{position:absolute;top:50%;left:50%;-webkit-transform:translate(-12px,-12px);-ms-transform:translate(-12px,-12px);transform:translate(-12px,-12px);line-height:24px;width:24px}
 .mdl-button--fab.mdl-button--mini-fab{height:40px;min-width:40px;width:40px}
 .mdl-button--fab .mdl-button__ripple-container{border-radius:50%;-webkit-mask-image:-webkit-radial-gradient(circle,#fff,#000)}
