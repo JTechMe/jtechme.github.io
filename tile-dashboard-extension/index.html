@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tile Dashboard - Beautiful New Tab Extension</title>
+    <meta name="description" content="Transform your browser's new tab page into a beautiful dashboard with live tiles, custom search engines, and drag-and-drop organization.">
+    <meta name="keywords" content="new tab, browser extension, dashboard, tiles, productivity, customization">
+    <meta name="author" content="JTechMe">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tile Dashboard - Beautiful New Tab Extension">
+    <meta property="og:description" content="Transform your browser's new tab page into a beautiful dashboard with live tiles, custom search engines, and drag-and-drop organization.">
+    <meta property="og:url" content="https://jtechme.dev/tile-dashboard-extension">
+    <meta property="og:site_name" content="JTechMe">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+
+        .header .tagline {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.5;
+        }
+
+        /* Download Section */
+        .download-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .download-card {
+            background: #f8f9ff;
+            border: 2px solid #e1e8ed;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+        }
+
+        .download-card .store-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .download-card h3 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .download-card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .download-btn.secondary {
+            background: #6c757d;
+        }
+
+        .download-btn.secondary:hover {
+            background: #5a6268;
+        }
+
+        .coming-soon {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #28a745;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .badge.soon {
+            background: #ffc107;
+            color: #333;
+        }
+
+        /* Features Section */
+        .features-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            color: #333;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .feature-card h3 {
+            color: #333;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .feature-list {
+            list-style: none;
+            text-align: left;
+            color: #555;
+        }
+
+        .feature-list li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Screenshots Section */
+        .screenshots-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .screenshot-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .screenshot-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #f8f9ff, #e9ecef);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            border: 2px dashed #dee2e6;
+        }
+
+        .screenshot-card h4 {
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .screenshot-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        .company-info {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .company-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .company-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .company-links a:hover {
+            color: #764ba2;
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .download-section,
+            .features-section,
+            .screenshots-section,
+            .footer {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .features-grid,
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links,
+            .company-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎯 Tile Dashboard</h1>
+            <div class="subtitle">Transform Your New Tab Experience</div>
+            <div class="tagline">
+                Beautiful, customizable new tab page with live tiles, custom search engines, and intuitive drag-and-drop organization. Make your browser start page truly yours.
+            </div>
+        </header>
+
+        <!-- Download Section -->
+        <section class="download-section">
+            <h2 class="section-title">📦 Download Now</h2>
+            <p class="section-subtitle">Choose your preferred installation method</p>
+            
+            <div class="download-grid">
+                <!-- Chrome Web Store -->
+                <div class="download-card">
+                    <div class="badge soon">Coming Soon</div>
+                    <div class="store-icon">🌐</div>
+                    <h3>Chrome Web Store</h3>
+                    <p>Official release for Google Chrome users</p>
+                    <a href="#" class="download-btn coming-soon">Install from Chrome Store</a>
+                </div>
+
+                <!-- Microsoft Edge -->
+                <div class="download-card">
+                    <div class="badge soon">Coming Soon</div>
+                    <div class="store-icon">🔷</div>
+                    <h3>Microsoft Edge Add-ons</h3>
+                    <p>Official release for Microsoft Edge users</p>
+                    <a href="#" class="download-btn coming-soon">Install from Edge Store</a>
+                </div>
+
+                <!-- Firefox Add-ons -->
+                <div class="download-card">
+                    <div class="badge soon">Coming Soon</div>
+                    <div class="store-icon">🦊</div>
+                    <h3>Firefox Add-ons</h3>
+                    <p>Official release for Firefox users</p>
+                    <a href="#" class="download-btn coming-soon">Install from Firefox Store</a>
+                </div>
+
+                <!-- Direct Download - Chromium -->
+                <div class="download-card">
+                    <div class="badge">Available</div>
+                    <div class="store-icon">⬇️</div>
+                    <h3>Direct Download (Chromium)</h3>
+                    <p>Manual installation for Chrome, Edge, Brave, Opera</p>
+                    <a href="tile-dash.crx" class="download-btn" download>Download .crx File</a>
+                </div>
+
+                <!-- Direct Download - Firefox -->
+                <div class="download-card">
+                    <div class="badge">Available</div>
+                    <div class="store-icon">📦</div>
+                    <h3>Direct Download (Firefox)</h3>
+                    <p>Manual installation for Firefox browser</p>
+                    <a href="tile-dash.xpi" class="download-btn" download>Download .xpi File</a>
+                </div>
+
+                <!-- Installation Guide -->
+                <div class="download-card">
+                    <div class="store-icon">📖</div>
+                    <h3>Installation Guide</h3>
+                    <p>Step-by-step instructions for manual installation</p>
+                    <a href="#installation" class="download-btn secondary">View Instructions</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2 class="section-title">✨ Powerful Features</h2>
+            <p class="section-subtitle">Everything you need for the perfect browsing experience</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Beautiful Live Tiles</h3>
+                    <p>Create stunning dashboards with customizable tiles in multiple sizes.</p>
+                    <ul class="feature-list">
+                        <li>4 tile sizes: Normal, Wide, Tall, Large</li>
+                        <li>Modern OS-style fill tiles</li>
+                        <li>Smart favicon fetching</li>
+                        <li>Custom icon uploads</li>
+                        <li>Hide tile names option</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Powerful Search</h3>
+                    <p>Integrated search with multiple engines and smart suggestions.</p>
+                    <ul class="feature-list">
+                        <li>Google, Bing, DuckDuckGo, Yandex support</li>
+                        <li>Custom search engines</li>
+                        <li>Real-time tile suggestions</li>
+                        <li>Direct URL navigation</li>
+                        <li>Keyboard shortcuts</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Custom Backgrounds</h3>
+                    <p>Personalize your dashboard with beautiful backgrounds.</p>
+                    <ul class="feature-list">
+                        <li>Gradient color customization</li>
+                        <li>Custom image backgrounds</li>
+                        <li>Real-time preview</li>
+                        <li>Responsive design</li>
+                        <li>Image compression</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🖱️</div>
+                    <h3>Drag & Drop Organization</h3>
+                    <p>Effortlessly organize your tiles with intuitive controls.</p>
+                    <ul class="feature-list">
+                        <li>Intuitive drag and drop</li>
+                        <li>Smart grid positioning</li>
+                        <li>Visual feedback</li>
+                        <li>Persistent layouts</li>
+                        <li>Export/import settings</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy Focused</h3>
+                    <p>Your data stays private with local-only storage.</p>
+                    <ul class="feature-list">
+                        <li>No data collection</li>
+                        <li>Local storage only</li>
+                        <li>No external tracking</li>
+                        <li>GDPR compliant</li>
+                        <li>Open source design</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Smart Features</h3>
+                    <p>Advanced functionality for power users.</p>
+                    <ul class="feature-list">
+                        <li>Real-time clock display</li>
+                        <li>Keyboard navigation</li>
+                        <li>Settings backup/restore</li>
+                        <li>International support</li>
+                        <li>Responsive design</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screenshots Section -->
+        <section class="screenshots-section">
+            <h2 class="section-title">📸 See It In Action</h2>
+            <p class="section-subtitle">Beautiful, functional, and completely customizable</p>
+            
+            <div class="screenshot-grid">
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">🖼️ Main Dashboard View</div>
+                    <h4>Beautiful Tile Layout</h4>
+                    <p>Organize your favorite websites with stunning live tiles in multiple sizes and layouts.</p>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">🔍 Search Interface</div>
+                    <h4>Smart Search Feature</h4>
+                    <p>Powerful search with real-time suggestions, multiple search engines, and direct navigation.</p>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">⚙️ Settings Panel</div>
+                    <h4>Easy Customization</h4>
+                    <p>Intuitive settings for backgrounds, search engines, and all extension preferences.</p>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">✏️ Tile Editor</div>
+                    <h4>Tile Management</h4>
+                    <p>Comprehensive tile editor with size options, icon settings, and visual customization.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installation Instructions -->
+        <section id="installation" class="features-section">
+            <h2 class="section-title">🛠️ Manual Installation</h2>
+            <p class="section-subtitle">For direct downloads when store versions aren't available</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Chromium Browsers</h3>
+                    <p>For Chrome, Edge, Brave, Opera, and other Chromium-based browsers:</p>
+                    <ul class="feature-list">
+                        <li>Download the .crx file above</li>
+                        <li>Open chrome://extensions/ in your browser</li>
+                        <li>Enable "Developer mode" (top-right toggle)</li>
+                        <li>Drag and drop the .crx file onto the page</li>
+                        <li>Click "Add extension" when prompted</li>
+                        <li>Open a new tab to enjoy your dashboard!</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🦊</div>
+                    <h3>Firefox Browser</h3>
+                    <p>For Mozilla Firefox users:</p>
+                    <ul class="feature-list">
+                        <li>Download the .xpi file above</li>
+                        <li>Open Firefox and navigate to about:addons</li>
+                        <li>Click the gear icon and select "Install Add-on From File"</li>
+                        <li>Select the downloaded .xpi file</li>
+                        <li>Click "Add" when prompted</li>
+                        <li>Open a new tab to see your new dashboard!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <a href="#download" class="cta-button">🚀 Get Started Today</a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="privacy.html">🛡️ Privacy Policy</a>
+                <a href="https://github.com/jtechme/tile-dashboard-extension">📝 Documentation</a>
+                <a href="https://github.com/jtechme/tile-dashboard-extension/issues">🐛 Report Issues</a>
+                <a href="https://github.com/jtechme/tile-dashboard-extension/discussions">💬 Support</a>
+            </div>
+            
+            <div class="company-info">
+                <strong>Developed and Published by JTechMe</strong>
+            </div>
+            
+            <div class="company-links">
+                <a href="https://jtechme.us">🏢 JTechMe Main Website</a>
+                <a href="https://jtechme.dev">💻 JTechMe Development</a>
+            </div>
+            
+            <div class="copyright">
+                © 2024 JTechMe. All rights reserved. | Tile Dashboard Extension v1.2.0
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

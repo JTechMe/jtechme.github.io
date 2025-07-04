@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Tile Dashboard Extension</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .header .tagline {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            margin-top: 15px;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            display: inline-block;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            color: #555;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 25px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h4 {
+            color: #666;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 20px 0 10px 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #444;
+            font-size: 1rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: 500;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .info-card {
+            background: #f8f9ff;
+            border: 2px solid #e1e8ed;
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
+        }
+
+        .info-card h4 {
+            color: #667eea;
+            margin-top: 0;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .check-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .check-list li {
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #444;
+        }
+
+        .check-list li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .x-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .x-list li {
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #444;
+        }
+
+        .x-list li::before {
+            content: '❌';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .contact-info h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .contact-info a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: underline;
+        }
+
+        .contact-info a:hover {
+            color: white;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .summary-box {
+            background: #e8f5e8;
+            border: 2px solid #4caf50;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .summary-box h3 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+
+        .date-info {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .date-info p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        strong {
+            color: #333;
+            font-weight: 600;
+        }
+
+        code {
+            background: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #d63384;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .content {
+                padding: 25px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ Privacy Policy</h1>
+            <div class="subtitle">Tile Dashboard Extension</div>
+            <div class="tagline">
+                <strong>Your privacy is guaranteed by design - all data stays on your device</strong>
+            </div>
+        </div>
+
+        <a href="javascript:history.back()" class="back-btn">← Back to Dashboard</a>
+
+        <div class="content">
+            <div class="date-info">
+                <p><strong>Effective Date:</strong> December 2024</p>
+                <p><strong>Last Updated:</strong> December 2024</p>
+                <p><strong>Version:</strong> 1.2.0</p>
+            </div>
+
+            <div class="highlight-box">
+                <span class="emoji">🔒</span>
+                <strong>The Simple Truth:</strong> We don't collect, store, or transmit any of your personal data to external servers. Everything stays on your device.
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">📋</span>Information We Collect</h2>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4><span class="emoji">❌</span>What We DON'T Collect</h4>
+                        <ul class="x-list">
+                            <li>No personal information (name, email, address)</li>
+                            <li>No browsing history or website visits</li>
+                            <li>No search queries or search history</li>
+                            <li>No location data or device information</li>
+                            <li>No behavioral analytics or usage tracking</li>
+                            <li>No cookies or tracking technologies</li>
+                            <li>No advertising data or marketing profiles</li>
+                            <li>No account creation required</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h4><span class="emoji">✅</span>What We Store Locally</h4>
+                        <p>The following stays on your device only:</p>
+                        <ul class="check-list">
+                            <li>Tile configurations and layouts</li>
+                            <li>Background preferences and colors</li>
+                            <li>Search engine selections</li>
+                            <li>Custom icons you upload</li>
+                            <li>Visual preferences and settings</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">🔐</span>How We Store Your Information</h2>
+                
+                <h3><span class="emoji">💾</span>Local Storage Only</h3>
+                <ul class="check-list">
+                    <li>All data stored using your browser's local storage APIs</li>
+                    <li>Information never leaves your device or browser</li>
+                    <li>Data is not transmitted to any external servers</li>
+                    <li>No cloud storage or remote databases used</li>
+                </ul>
+
+                <h3><span class="emoji">🔄</span>Browser Sync (Optional)</h3>
+                <p>If you enable Chrome/Edge sync:</p>
+                <ul class="check-list">
+                    <li>Your browser may sync extension data across your devices</li>
+                    <li>This sync is handled entirely by your browser, not our extension</li>
+                    <li>We have no access to or control over browser sync</li>
+                    <li>You can disable sync in your browser settings anytime</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">🌐</span>External Services We Use</h2>
+                
+                <h3><span class="emoji">🖼️</span>Favicon Services (Images Only)</h3>
+                <p>To display website icons for your tiles, we use:</p>
+                <ul>
+                    <li><strong>Google Favicons:</strong> <code>https://www.google.com/s2/favicons</code></li>
+                    <li><strong>DuckDuckGo Icons:</strong> <code>https://icons.duckduckgo.com</code></li>
+                    <li><strong>Icon.Horse:</strong> <code>https://icon.horse</code></li>
+                </ul>
+
+                <div class="info-card">
+                    <h4><span class="emoji">ℹ️</span>What This Means</h4>
+                    <ul class="check-list">
+                        <li>Only website domain names are sent to retrieve icons</li>
+                        <li>No personal data or browsing history is shared</li>
+                        <li>These are standard services used by millions of websites</li>
+                        <li>No tracking or data collection occurs through these requests</li>
+                    </ul>
+                </div>
+
+                <h3><span class="emoji">🔍</span>Search Engine Redirect</h3>
+                <p>When you perform a web search:</p>
+                <ul class="check-list">
+                    <li>You are redirected to your chosen search engine</li>
+                    <li>We don't process or store your search queries</li>
+                    <li>Your search is handled directly by the search engine</li>
+                    <li>We have no involvement beyond the redirect</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">👤</span>Your Rights and Control</h2>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4><span class="emoji">⚡</span>Complete Data Control</h4>
+                        <ul class="check-list">
+                            <li>View all stored data through the extension</li>
+                            <li>Modify settings and information anytime</li>
+                            <li>Delete individual tiles or clear all settings</li>
+                            <li>Export data as backup file</li>
+                            <li>Import settings from backup</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h4><span class="emoji">🗑️</span>Uninstallation</h4>
+                        <ul class="check-list">
+                            <li>Complete removal of all stored data</li>
+                            <li>No residual data (no external servers)</li>
+                            <li>Reinstalling starts fresh</li>
+                            <li>Clean slate with default configuration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">🔒</span>Data Security</h2>
+                
+                <h3><span class="emoji">🚫</span>No Data Transmission</h3>
+                <ul class="check-list">
+                    <li>Zero network transmission of personal data</li>
+                    <li>No API calls containing user information</li>
+                    <li>No external storage or cloud services</li>
+                    <li>Maximum security through local-only storage</li>
+                </ul>
+
+                <h3><span class="emoji">🛡️</span>Security Benefits</h3>
+                <ul class="check-list">
+                    <li>No external attack surface (no servers to compromise)</li>
+                    <li>No data breaches possible (no central database)</li>
+                    <li>Browser-level security protections apply</li>
+                    <li>Same security as bookmarks and passwords</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">🌍</span>International Users</h2>
+                
+                <div class="info-card">
+                    <h4><span class="emoji">🌏</span>Global Privacy Standards</h4>
+                    <ul class="check-list">
+                        <li>Same privacy standards apply worldwide</li>
+                        <li>No geographical data collection or tracking</li>
+                        <li>No cross-border data transfer (no data leaves your device)</li>
+                        <li>Complete local control regardless of location</li>
+                    </ul>
+                </div>
+
+                <h3><span class="emoji">⚖️</span>Privacy Law Compliance</h3>
+                <ul class="check-list">
+                    <li><strong>GDPR</strong> (European Union) - Compliant</li>
+                    <li><strong>CCPA</strong> (California) - Compliant</li>
+                    <li><strong>PIPEDA</strong> (Canada) - Compliant</li>
+                    <li><strong>Data Protection Act</strong> (UK) - Compliant</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">👶</span>Children's Privacy</h2>
+                <div class="info-card">
+                    <h4><span class="emoji">🛡️</span>Safe for All Ages</h4>
+                    <ul class="check-list">
+                        <li>No age restrictions on extension use</li>
+                        <li>No data collection from users of any age</li>
+                        <li>Safe for children under 13</li>
+                        <li>COPPA compliant through zero data collection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">📊</span>Analytics and Tracking</h2>
+                
+                <h3><span class="emoji">❌</span>What We Don't Use</h3>
+                <ul class="x-list">
+                    <li>Google Analytics or similar services</li>
+                    <li>Error tracking or crash reporting</li>
+                    <li>Usage statistics or metrics collection</li>
+                    <li>Performance monitoring that transmits data</li>
+                    <li>A/B testing or user behavior analysis</li>
+                    <li>Advertising networks or marketing pixels</li>
+                    <li>Social media tracking or integration</li>
+                </ul>
+            </div>
+
+            <div class="summary-box">
+                <h3><span class="emoji">🎯</span>Summary - What This Means for You</h3>
+                <ul class="check-list">
+                    <li><strong>Complete privacy:</strong> Your data never leaves your device</li>
+                    <li><strong>Full control:</strong> You own and control all your information</li>
+                    <li><strong>No tracking:</strong> We can't and don't monitor your usage</li>
+                    <li><strong>Transparent operation:</strong> Everything happens locally and visibly</li>
+                    <li><strong>Maximum security:</strong> No external servers means no data breaches</li>
+                </ul>
+                
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #4caf50;">
+                    <strong>Our Promise:</strong> We will never collect, store, sell, or share your personal information. Your privacy is not just protected—it's architecturally guaranteed by how we built this extension.
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h3><span class="emoji">📞</span>Contact Information</h3>
+                
+                <h4>Questions or Concerns</h4>
+                <p>If you have questions about this Privacy Policy:</p>
+                <ul>
+                    <li><strong>Website:</strong> <a href="https://jtechme.dev/tile-dashboard-extension">jtechme.dev/tile-dashboard-extension</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:privacy@jtechme.dev">privacy@jtechme.dev</a></li>
+                    <li><strong>Developer:</strong> JTechMe</li>
+                    <li><strong>Response Time:</strong> Our responses may be delayed as we are a small group</li>
+                </ul>
+
+                <h4>Data Requests</h4>
+                <p>Since all data is stored locally on your device:</p>
+                <ul>
+                    <li><strong>Access requests:</strong> Use the extension's export feature</li>
+                    <li><strong>Deletion requests:</strong> Use the reset feature or uninstall</li>
+                    <li><strong>Correction requests:</strong> Modify settings directly in the extension</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 2px solid #e1e8ed; color: #666;">
+                <p><strong>This Privacy Policy demonstrates our commitment to your privacy through design, not just policy.</strong></p>
+                <p style="margin-top: 15px;">
+                    <em>Tile Dashboard Extension v1.2.0 © 2024 JTechMe</em>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
